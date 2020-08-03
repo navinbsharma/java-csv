@@ -18,9 +18,9 @@ import java.io.IOException;
 
 public class CSVFileReader {
     public static void main(String[] args) {
-        double fixedCost = 0.0;
+        double fixedCost = 0;
         String arr[];
-        double actualHours = 0.0;
+        double actualHours=0;
         String csvFile = "J:/Java/LitmusBloxProject/JavaProject.csv";
         String line = "";
         String cvsSplitBy = ",";
@@ -28,19 +28,17 @@ public class CSVFileReader {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(cvsSplitBy);
                 System.out.println(data[0]+"  "+data[1]+"   "+data[2]+"   "+data[8] + "    " + data[10]);
-                // fixedCost += Long.parseLong(data[8]);
-                // actualHours += Double.parseDouble(data[10]);
                 arr = data[8].split("\\$");
                 int i;
                 for(i=0; i<arr.length;i++){
                         
                 }
                 try{
-                    fixedCost += Double.parseDouble(arr[--i]);
-                    actualHours += Double.parseDouble(data[10]);
+                   fixedCost += Double.parseDouble(arr[--i]);
+                   actualHours += Double.parseDouble(data[10]);
                 }
                 catch(NumberFormatException e){
-                    e.printStackTrace();
+                    
                 }   
                 
                 
